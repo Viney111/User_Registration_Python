@@ -73,3 +73,18 @@ class Regex_Validation:
                 return False
         except Exception as ex:
             print(ex)
+
+    def validate_password(password):
+        """
+        Description: This function is to validate password.
+        Condition: Password should contain min 8 characters,at least one uppercase,at least one lowercase & one special character.
+        Args: password: To be validated
+        Returns: True, if valid input given..False, if invalid input given
+        """
+        try:
+            if re.match(r"^(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z1-9]{1}[a-zA-Z0-9]{7,}", password):
+                return True
+            else:
+                return False
+        except Exception as ex:
+            print(ex)

@@ -93,3 +93,24 @@ class Test_UserRegistration(unittest.TestCase):
         self.assertFalse(Regex_Validation.validate_phone_number("7206594149"))
         self.assertFalse(
             Regex_Validation.validate_phone_number("91 5466664666"))
+
+    def test_password_when_entered_correct_should_return_true(self):
+        """
+            Description: Unit Test to verify password positively
+            Parametres: Takes correct password
+            Returns: Just Checks the value inputed is giving desired results or not
+        """
+        self.assertTrue(
+            Regex_Validation.validate_password("7062662Aa@Vi"))
+        self.assertTrue(
+            Regex_Validation.validate_password("hjchjcV55@bk"))
+
+    def test_password_when_entered_incorrect_should_return_false(self):
+        """
+            Description: Unit Test to verify password negatively
+            Parametres: Takes Incorrect password
+            Returns: Just Checks the value inputed is giving desired results or not
+        """
+        self.assertFalse(Regex_Validation.validate_password("7062662a@vi"))
+        self.assertFalse(
+            Regex_Validation.validate_password("hjchjc@bk"))
