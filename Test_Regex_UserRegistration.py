@@ -50,3 +50,25 @@ class Test_UserRegistration(unittest.TestCase):
         """
         self.assertFalse(Regex_Validation.validate_last_name("Kj"))
         self.assertFalse(Regex_Validation.validate_last_name("juneja"))
+
+    def test_email_when_entered_correct_should_return_true(self):
+        """
+            Description: Unit Test to verify email positively
+            Parametres: Takes correct email
+            Returns: Just Checks the value inputed is giving desired results or not
+        """
+        self.assertTrue(
+            Regex_Validation.validate_email("vineykahneja999@gmail.com"))
+        self.assertTrue(
+            Regex_Validation.validate_email("vishal1juuneha@bridgelabz.com"))
+
+    def test_email_when_entered_incorrect_should_return_false(self):
+        """
+            Description: Unit Test to verify email negatively
+            Parametres: Takes Incorrect email
+            Returns: Just Checks the value inputed is giving desired results or not
+        """
+        self.assertFalse(Regex_Validation.validate_email(
+            "vineykahneja999gmail.com"))
+        self.assertFalse(
+            Regex_Validation.validate_email("vishal1juuneha@bridgelabzcom"))

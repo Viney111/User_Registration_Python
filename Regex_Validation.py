@@ -43,3 +43,18 @@ class Regex_Validation:
                 return False
         except Exception as ex:
             print(ex)
+
+    def validate_email(email):
+        """
+        Description: This function is to validate email.
+        Condition: Email should contain @ and . and other conditions
+        Args: email: To be validated
+        Returns: Ture, if valid input given..False, if invalid input given
+        """
+        try:
+            if re.match(r"^[0-9a-z]+[+_.-]?[0-9a-z]+[@][0-9a-z]+[.][a-z]{2,}[.]?[a-z]+$", email):
+                return True
+            else:
+                return False
+        except Exception as ex:
+            print(ex)
