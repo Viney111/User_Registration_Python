@@ -72,3 +72,24 @@ class Test_UserRegistration(unittest.TestCase):
             "vineykahneja999gmail.com"))
         self.assertFalse(
             Regex_Validation.validate_email("vishal1juuneha@bridgelabzcom"))
+
+    def test_phoneNo_when_entered_correct_should_return_true(self):
+        """
+            Description: Unit Test to verify phone number positively
+            Parametres: Takes correct phone number
+            Returns: Just Checks the value inputed is giving desired results or not
+        """
+        self.assertTrue(
+            Regex_Validation.validate_phone_number("91 7206594149"))
+        self.assertTrue(
+            Regex_Validation.validate_phone_number("91 9991661664"))
+
+    def test_phoneNo_when_entered_incorrect_should_return_false(self):
+        """
+            Description: Unit Test to verify phone number negatively
+            Parametres: Takes Incorrect phone number
+            Returns: Just Checks the value inputed is giving desired results or not
+        """
+        self.assertFalse(Regex_Validation.validate_phone_number("7206594149"))
+        self.assertFalse(
+            Regex_Validation.validate_phone_number("91 5466664666"))
